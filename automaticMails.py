@@ -37,7 +37,7 @@ subject = "subject line"
 
 # Define the email function (dont call it email!)
 def send_emails(email_list):
-
+#try and except block 
     for person in email_list:
         try:
 
