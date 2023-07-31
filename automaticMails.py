@@ -1,6 +1,6 @@
 
 #install python before you run this code
-
+import pandas as pd
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -16,11 +16,32 @@ smtp_server = "smtp.gmail.com"  # Google SMTP Server
 email_from = "youremail@gmail.com"
 
 # Set up the email lists
-email_list = [	
-"emaillist@gmaill.com",	
-"typeypuremails@overhere.com"
-"enteremail@gmail.com"	
-]
+def read_emails_from_excel(file_path):
+    try:
+        # Read the .xlsx file into a pandas DataFrame
+        df = pd.read_excel(file_path, engine='openpyxl')
+
+        # Assuming the emails are in a column named 'Email'
+        email_list = df['Email'].tolist()
+
+        # Remove any NaN values (if any) from the list
+        email_list = [email for email in email_list if pd.notnull(email)]
+
+        return email_list
+
+    except Exception as e:
+        print(f"Failed to read emails from the .xlsx file. Error: {str(e)}")
+        return []
+
+# ... Rest of your code ...
+
+# Path to the .xlsx file containing the emails
+xlsx_file_path = "file.xlsx"
+
+# Read emails from the .xlsx file
+email_list = read_emails_from_excel(xlsx_file_path)
+
+
 pswd = "your password" 
 #here password is not your email password it is generated using google setting
 #below steps to enable app password in gmail account

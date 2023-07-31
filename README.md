@@ -14,3 +14,5 @@ enter this password in the pswd variable.
 
 
 If you are using output please check the smtp_server and port number
+
+Added email list from the xlsv file install openpyxl using pip install openpyxl
