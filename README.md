@@ -10,3 +10,7 @@ after that enable 2-step Verification  and make sure to on it.
 after in the search bar please enter app password
 create a custom name to and click on generate then you can see password as abcd abcd abcd abcd
 enter this password in the pswd variable.
+
+
+
+If you are using output please check the smtp_server and port number
