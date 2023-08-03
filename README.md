@@ -17,5 +17,5 @@ If you are using output please check the smtp_server and port number
 
 Added email list from the xlsv file install openpyxl using pip install openpyxl
 
-Using openpyxl we can identify the data
+Using openpyxl we can identify the data these are new features
 
