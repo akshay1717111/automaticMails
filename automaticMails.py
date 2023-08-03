@@ -1,5 +1,3 @@
-
-#install python before you run this code
 import pandas as pd
 import smtplib
 from email.mime.text import MIMEText
@@ -12,53 +10,113 @@ from email import encoders
 smtp_port = 587                 # Standard secure SMTP port
 smtp_server = "smtp.gmail.com"  # Google SMTP Server
 
-#enter your email address
-email_from = "youremail@gmail.com"
-
 # Set up the email lists
-def read_emails_from_excel(file_path):
-    try:
-        # Read the .xlsx file into a pandas DataFrame
-        df = pd.read_excel(file_path, engine='openpyxl')
+email_from = "akshaykc749@gmail.com"
 
-        # Assuming the emails are in a column named 'Email'
-        email_list = df['Email'].tolist()
 
-        # Remove any NaN values (if any) from the list
-        email_list = [email for email in email_list if pd.notnull(email)]
+# Define the function to read emails from .xlsx file
+# def read_emails_from_excel(file_path):
+#     try:
+#         # Read the .xlsx file into a pandas DataFrame
+#         df = pd.read_excel(file_path, engine='openpyxl')
 
-        return email_list
+#         # Assuming the emails are in a column named 'Email'
+#         email_list = df['Email'].tolist()
 
-    except Exception as e:
-        print(f"Failed to read emails from the .xlsx file. Error: {str(e)}")
-        return []
+#         # Remove any NaN values (if any) from the list
+#         email_list = [email for email in email_list if pd.notnull(email)]
 
-# ... Rest of your code ...
+#         return email_list
 
-# Path to the .xlsx file containing the emails
-xlsx_file_path = "file.xlsx"
+#     except Exception as e:
+#         print(f"Failed to read emails from the .xlsx file. Error: {str(e)}")
+#         return []
+
+# # ... Rest of your code ...
+
+# # Path to the .xlsx file containing the emails
+# xlsx_file_path = "file.xlsx"
 
 # Read emails from the .xlsx file
-email_list = read_emails_from_excel(xlsx_file_path)
+email_list = ["anand@cyber-resource.com",
+"anandm@vbeyond.com",
+"anand.s@vdartinc.com",
+"anand@codetech-inc.com",
+"anand@reveilletechnologies.com",
+"anandg@select-jarvis.com",
+"ANANTH.GEJJI@experis.com",
+"ananth@ebasetek.com",
+"anantha@aroghia.com",
+"ananu@vsoftconsulting.com",
+"Andrea@i2usystems.com",
+"andrew.g@tek-connexion.com",
+"Andrew.Hunt@gvdsystem.com",
+"andy@ms-info-tech.com",
+"andy@americanunit.com",
+"andy@kosheritgroup.com",
+"ani@scelint.com",
+"aniket.sharma@prismitcorp.com",
+"aniket@akaasa.com",
+"aniket@veracity-us.com",
+"aniketsharma@sivisoft.com",
+"anil@itvisiongroup.com",
+"anil.pal@idctechnologies.com",
+"anil.kumar@axiomglobal.com",
+"anil.kumar@compunnel.com",
+"anil.s@idctechnologies.com",
+"anil.s@unicomtec.com",
+"anil@quantumincs.com",
+"anil@satyass.com",
+"anil@sophusinfo.com",
+"anilkumar@krgtech.com",
+"Animesh.dey@nityo.com",
+"anand@cyber-resource.com",
+"anandm@vbeyond.com",
+"anand.s@vdartinc.com",
+"anand@codetech-inc.com",
+"anand@reveilletechnologies.com",
+"anandg@select-jarvis.com",
+"ANANTH.GEJJI@experis.com",
+"ananth@ebasetek.com",
+"anantha@aroghia.com",
+"ananu@vsoftconsulting.com",
+"Andrea@i2usystems.com",
+"andrew.g@tek-connexion.com",
+"Andrew.Hunt@gvdsystem.com",
+"andy@ms-info-tech.com",
+"andy@americanunit.com",
+"andy@kosheritgroup.com",
+"ani@scelint.com",
+"aniket.sharma@prismitcorp.com",
+"aniket@akaasa.com",
+"aniket@veracity-us.com",
+"aniketsharma@sivisoft.com",
+"anil@itvisiongroup.com",
+"anil.pal@idctechnologies.com",
+"anil.kumar@axiomglobal.com",
+"anil.kumar@compunnel.com",
+"anil.s@idctechnologies.com",
+"anil.s@unicomtec.com",
+"anil@quantumincs.com",
+"anil@satyass.com",
+"anil@sophusinfo.com",
+"anilkumar@krgtech.com",
+"Animesh.dey@nityo.com",
+]
+
+# Run the function with the updated email_list
 
 
-pswd = "your password" 
-#here password is not your email password it is generated using google setting
-#below steps to enable app password in gmail account
-#go to the google account setting next go to security tab
-#after that enable 2-step Verification  and make sure to on it. 
-# after in the search bar please enter app password
-#create a custom name to and click on generate then you can see password as abcd abcd abcd abcd
-#enter this password in the pswd variable.
+pswd = "kzlgvmfzuggayfhd" 
 
 # name the email subject
-subject = "subject line"
+subject = "Job Inquiry for Full Stack Developer/ Java Developer/ Front end Developer Position"
 
 
 
 # Define the email function (dont call it email!)
-def send_emails(email_list):
-#try and except block 
+def send_emails(email_list, email_from, pswd):
+    
     for person in email_list:
         try:
 
@@ -67,7 +125,18 @@ def send_emails(email_list):
             body = f"""
 Hello,
 
-Type your body over here
+I hope this email finds you well. My name is Akshay Kumar.
+
+With a 10+ background in the software industry, Throughout my career, I have demonstrated proficiency in Full Stack Development. I have attached my resume for your review. Please feel free to reach out to me if you require any additional information or if you would like to schedule an interview. I am available at 5395859198 or akshaykc749@gmail.com.
+
+Thank you for considering my application. I look forward to the opportunity to discuss how my skills and experiences align with the needs. 
+
+Work Authorization: GC, Looking for C2C roles.
+
+Sincerely,
+Akshay Kumar
++1 539 585 9198
+akshaykc749@gmail.com
         """
 
         # make a MIME object to define parts of the email
@@ -80,7 +149,7 @@ Type your body over here
             msg.attach(MIMEText(body, 'plain'))
 
         # Define the file to attach
-            filename = "Resume.pdf"
+            filename = "AkshayKumarChemuri_FSJD.docx"
 
         # Open the file in python as a binary
             attachment= open(filename, 'rb')  # r for read and b for binary
@@ -97,7 +166,7 @@ Type your body over here
 
             # Connect with the server
             print("Connecting to server...")
-            TIE_server = smtplib.SMTP(smtp_server, smtp_port)
+            TIE_server = smtplib.SMTP(smtp_server, smtp_port, timeout=60)
             TIE_server.starttls()
             TIE_server.login(email_from, pswd)
             print("Successfully connected to server")
@@ -117,13 +186,4 @@ Type your body over here
             print()
 
 # Run the function
-send_emails(email_list)
-
-
-
-
-        
-
-
-
-
+send_emails(email_list, email_from, pswd)
