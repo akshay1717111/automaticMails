@@ -19,3 +19,5 @@ Added email list from the xlsv file install openpyxl using pip install openpyxl
 
 Using openpyxl we can identify the data these are new features added into git repo
 
+Added excel reading data
+
