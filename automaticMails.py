@@ -11,7 +11,7 @@ smtp_port = 587                 # Standard secure SMTP port
 smtp_server = "smtp.gmail.com"  # Google SMTP Server
 
 # Set up the email lists
-email_from = "akshaykc749@gmail.com"
+email_from = ""
 
 
 # Define the function to read emails from .xlsx file
@@ -38,79 +38,15 @@ email_from = "akshaykc749@gmail.com"
 # xlsx_file_path = "file.xlsx"
 
 # Read emails from the .xlsx file
-email_list = ["anand@cyber-resource.com",
-"anandm@vbeyond.com",
-"anand.s@vdartinc.com",
-"anand@codetech-inc.com",
-"anand@reveilletechnologies.com",
-"anandg@select-jarvis.com",
-"ANANTH.GEJJI@experis.com",
-"ananth@ebasetek.com",
-"anantha@aroghia.com",
-"ananu@vsoftconsulting.com",
-"Andrea@i2usystems.com",
-"andrew.g@tek-connexion.com",
-"Andrew.Hunt@gvdsystem.com",
-"andy@ms-info-tech.com",
-"andy@americanunit.com",
-"andy@kosheritgroup.com",
-"ani@scelint.com",
-"aniket.sharma@prismitcorp.com",
-"aniket@akaasa.com",
-"aniket@veracity-us.com",
-"aniketsharma@sivisoft.com",
-"anil@itvisiongroup.com",
-"anil.pal@idctechnologies.com",
-"anil.kumar@axiomglobal.com",
-"anil.kumar@compunnel.com",
-"anil.s@idctechnologies.com",
-"anil.s@unicomtec.com",
-"anil@quantumincs.com",
-"anil@satyass.com",
-"anil@sophusinfo.com",
-"anilkumar@krgtech.com",
-"Animesh.dey@nityo.com",
-"anand@cyber-resource.com",
-"anandm@vbeyond.com",
-"anand.s@vdartinc.com",
-"anand@codetech-inc.com",
-"anand@reveilletechnologies.com",
-"anandg@select-jarvis.com",
-"ANANTH.GEJJI@experis.com",
-"ananth@ebasetek.com",
-"anantha@aroghia.com",
-"ananu@vsoftconsulting.com",
-"Andrea@i2usystems.com",
-"andrew.g@tek-connexion.com",
-"Andrew.Hunt@gvdsystem.com",
-"andy@ms-info-tech.com",
-"andy@americanunit.com",
-"andy@kosheritgroup.com",
-"ani@scelint.com",
-"aniket.sharma@prismitcorp.com",
-"aniket@akaasa.com",
-"aniket@veracity-us.com",
-"aniketsharma@sivisoft.com",
-"anil@itvisiongroup.com",
-"anil.pal@idctechnologies.com",
-"anil.kumar@axiomglobal.com",
-"anil.kumar@compunnel.com",
-"anil.s@idctechnologies.com",
-"anil.s@unicomtec.com",
-"anil@quantumincs.com",
-"anil@satyass.com",
-"anil@sophusinfo.com",
-"anilkumar@krgtech.com",
-"Animesh.dey@nityo.com",
-]
+email_list = [""]
 
 # Run the function with the updated email_list
 
 
-pswd = "kzlgvmfzuggayfhd" 
+pswd = "" 
 
 # name the email subject
-subject = "Job Inquiry for Full Stack Developer/ Java Developer/ Front end Developer Position"
+subject = ""
 
 
 
@@ -123,20 +59,7 @@ def send_emails(email_list, email_from, pswd):
 
         # Make the body of the email
             body = f"""
-Hello,
 
-I hope this email finds you well. My name is Akshay Kumar.
-
-With a 10+ background in the software industry, Throughout my career, I have demonstrated proficiency in Full Stack Development. I have attached my resume for your review. Please feel free to reach out to me if you require any additional information or if you would like to schedule an interview. I am available at 5395859198 or akshaykc749@gmail.com.
-
-Thank you for considering my application. I look forward to the opportunity to discuss how my skills and experiences align with the needs. 
-
-Work Authorization: GC, Looking for C2C roles.
-
-Sincerely,
-Akshay Kumar
-+1 539 585 9198
-akshaykc749@gmail.com
         """
 
         # make a MIME object to define parts of the email
@@ -149,7 +72,7 @@ akshaykc749@gmail.com
             msg.attach(MIMEText(body, 'plain'))
 
         # Define the file to attach
-            filename = "AkshayKumarChemuri_FSJD.docx"
+            filename = ""
 
         # Open the file in python as a binary
             attachment= open(filename, 'rb')  # r for read and b for binary
